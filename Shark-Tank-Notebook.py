@@ -54,7 +54,7 @@ data['askedfor'] = np.log1p(data['askedfor'])
 data['valuation'] = np.log1p(data['valuation'])
 
 # discretize asked amount
-data['ask_level'] = pd.cut(data['askedfor'], bins=3, tick_labels=['Low', 'Medium', 'High'])
+data['ask_level'] = pd.cut(data['askedfor'], bins=3, labels=['Low', 'Medium', 'High'])
 
 # encode discretized feature
 data = pd.get_dummies(data, columns=['ask_level'], drop_first=True)
